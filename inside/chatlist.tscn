@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://inside/chatlist.gd" type="Script" id=1]
+
+[node name="ChatList" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Http" type="HTTPRequest" parent="."]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 345.63
+margin_top = 194.068
+margin_right = 429.63
+margin_bottom = 240.068
+text = "ChatList"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="usuario" type="Label" parent="."]
+margin_left = 534.896
+margin_top = 101.885
+margin_right = 574.896
+margin_bottom = 115.885
+text = "NADA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mensaje" type="Label" parent="."]
+margin_left = 627.653
+margin_top = 102.068
+margin_right = 667.653
+margin_bottom = 116.068
+text = "NADA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="request_completed" from="Http" to="." method="_on_HttpPost_request_completed"]
+[connection signal="request_completed" from="Http" to="." method="_on_Http_request_completed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
